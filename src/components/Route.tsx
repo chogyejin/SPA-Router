@@ -1,16 +1,11 @@
-import { ReactNode } from "react";
-
 interface Props {
   path: string;
-  component: ReactNode;
+  component: React.ReactNode;
+  currentPath?: string;
 }
 
-const Route = ({ path, component }: Props) => {
-  return (
-    <div>
-      <div>{component}</div>
-    </div>
-  );
+const Route = ({ path, component, currentPath }: Props) => {
+  return path === currentPath ? <div>{component}</div> : null;
 };
 
 export default Route;
